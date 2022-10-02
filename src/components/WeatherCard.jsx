@@ -20,9 +20,9 @@ const WeatherCard = ({ weather, temperature }) => {
       <section className='first__data'> {/* in 'first data' the climate data of the geolacized city is shown */}
         <h3 className='description'>{weather?.weather[0].description}</h3>
         <ul className='list__data'>
-          <li><span><WiNightAltCloudyWindy />  Wind Speed: <br /></span>    {weather?.wind.speed} m/s</li>
-          <li><span><BsCloudsFill />  Clouds: <br /></span>    {weather?.clouds.all} %</li>
-          <li><span><GiPressureCooker />  Pressure: <br /></span>    {weather?.main.pressure} hPa</li>
+          <li><span><WiNightAltCloudyWindy />  Wind Speed: <br /></span> {weather?.wind.speed}m/s</li>
+          <li><span><BsCloudsFill />  Clouds: <br /></span> {weather?.clouds.all}%</li>
+          <li><span><GiPressureCooker />  Pressure: <br /></span> {weather?.main.pressure}hPa</li>
         </ul>
       </section>
       <section className='temperature__data'>

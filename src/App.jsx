@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Weather from './components/WeatherCard'
-import './style/App.css'
 import Loader from './components/Loader'
-import Message from './components/Message'
+import './App.css'
 
 function App () {
   const [coords, setCoords] = useState()
