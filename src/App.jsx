@@ -41,9 +41,9 @@ function App () {
     }
   }, [coords])
   return (
-    <>
-      {(loading) ? (<Loader />) : (<div className='App'><Weather weather={weather} temperature={temperature} /></div>)}
-    </>
+    <div className='App'>
+      {(loading) ? (<Loader />) : (<Weather weather={weather} temperature={temperature} />)}
+    </div>
   )
 }
 
