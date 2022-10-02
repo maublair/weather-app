@@ -4,10 +4,9 @@ import { WiNightAltCloudyWindy } from 'react-icons/wi'
 import { GiPressureCooker } from 'react-icons/gi'
 import { FaTemperatureHigh } from 'react-icons/fa'
 
-const WeatherCard = ({ weather, temperature }) => {
+const WeatherCard = ({ weather, temperature, imgIcon }) => {
   const [isCelsius, setIsCelsius] = useState(true)
   const changeTemperatures = () => setIsCelsius(!isCelsius)
-  console.log(temperature)
   return (
     <article className='card'>
       <section className='weather__title'>
@@ -15,7 +14,7 @@ const WeatherCard = ({ weather, temperature }) => {
         <h2 className='weather__app'>{`${weather?.name}, ${weather?.sys.country}`}</h2>
       </section>
       <section className='img__weather'>
-        <img src={`https://openweathermap.org/img/wn/${weather?.weather[0].icon}@4x.png`} alt='' />
+        <img src={`http://openweathermap.org/img/wn/${imgIcon}@2x.png`} alt='' />
       </section>
       <section className='first__data'> {/* in 'first data' the climate data of the geolacized city is shown */}
         <h3 className='description'>{weather?.weather[0].description}</h3>

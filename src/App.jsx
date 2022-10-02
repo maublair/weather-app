@@ -8,6 +8,7 @@ function App () {
   const [coords, setCoords] = useState()
   const [weather, setWeather] = useState()
   const [temperature, setTemperature] = useState()
+  const [imgIcon, setImgIcon] = useState()
   const [loading, setLoading] = useState(false)
   useEffect(() => {
     const success = (pos) => {
@@ -30,6 +31,8 @@ function App () {
         .then(res => {
           const celsius = (res.data.main.temp - 273.15).toFixed(1)
           const farenheit = (((celsius * 9) / 5) + 32).toFixed(1)
+          const dataImgIcon = res.data.weather[0].icon
+          setImgIcon(dataImgIcon)
           setTemperature({ celsius, farenheit })
           setWeather(res.data)
         })
@@ -41,7 +44,8 @@ function App () {
   }, [coords])
   return (
     <div className='App'>
-      {(loading) ? (<Loader />) : (<Weather weather={weather} temperature={temperature} />)}
+      {(loading) ? (<Loader />) : (<Weather weather={weather} temperature={temperature} imgIcon={imgIcon} />)}
+      {}
     </div>
   )
 }
