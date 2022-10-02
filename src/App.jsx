@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Weather from './components/WeatherCard'
-import './App.css'
+import './style/App.css'
+import Loader from './components/Loader'
+import Message from './components/Message'
 
 function App () {
   const [coords, setCoords] = useState()
   const [weather, setWeather] = useState()
   const [temperature, setTemperature] = useState()
+  const [loading, setLoading] = useState(false)
   useEffect(() => {
     const success = (pos) => {
       const objLatLong = {
@@ -18,7 +21,7 @@ function App () {
     navigator.geolocation.getCurrentPosition(success)
   }, [])
 
-  // -------------------------------------------- PETICIÓN DEL CLIMA --------------------------------------------
+  // ---------------------- PETICIÓN DEL CLIMA --------------------------------------------
 
   useEffect(() => {
     if (coords) {
@@ -32,12 +35,15 @@ function App () {
           setWeather(res.data)
         })
         .catch(err => console.log(err))
+      setLoading(false)
+    } else {
+      setLoading(true)
     }
   }, [coords])
   return (
-    <div className='App'>
-      <Weather weather={weather} temperature={temperature} />
-    </div>
+    <>
+      {(loading) ? (<Loader />) : (<div className='App'><Weather weather={weather} temperature={temperature} /></div>)}
+    </>
   )
 }
 

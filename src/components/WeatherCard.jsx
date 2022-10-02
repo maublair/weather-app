@@ -3,13 +3,10 @@ import { BsCloudsFill } from 'react-icons/bs'
 import { WiNightAltCloudyWindy } from 'react-icons/wi'
 import { GiPressureCooker } from 'react-icons/gi'
 import { FaTemperatureHigh } from 'react-icons/fa'
-import { TbTemperatureCelsius } from 'react-icons/tb'
-import { TbTemperatureFahrenheit } from 'react-icons/tb'
 
 const WeatherCard = ({ weather, temperature }) => {
   const [isCelsius, setIsCelsius] = useState(true)
   const changeTemperatures = () => setIsCelsius(!isCelsius)
-  const imgF = <TbTemperatureFahrenheit />
   console.log(temperature)
   return (
     <article className='card'>
@@ -23,9 +20,9 @@ const WeatherCard = ({ weather, temperature }) => {
       <section className='first__data'> {/* in 'first data' the climate data of the geolacized city is shown */}
         <h3 className='description'>{weather?.weather[0].description}</h3>
         <ul className='list__data'>
-          <li><span><WiNightAltCloudyWindy />  Wind Speed: <br /></span> {weather?.wind.speed}m/s</li>
-          <li><span><BsCloudsFill />  Clouds: <br /></span> {weather?.clouds.all}%</li>
-          <li><span><GiPressureCooker />  Pressure: <br /></span> {weather?.main.pressure}hPa</li>
+          <li><span><WiNightAltCloudyWindy />  Wind Speed: <br /></span>    {weather?.wind.speed} m/s</li>
+          <li><span><BsCloudsFill />  Clouds: <br /></span>    {weather?.clouds.all} %</li>
+          <li><span><GiPressureCooker />  Pressure: <br /></span>    {weather?.main.pressure} hPa</li>
         </ul>
       </section>
       <section className='temperature__data'>
