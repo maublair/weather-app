@@ -1,29 +1,36 @@
 import { useState, React } from 'react'
+import { BsCloudsFill } from 'react-icons/bs'
+import { WiNightAltCloudyWindy } from 'react-icons/wi'
+import { GiPressureCooker } from 'react-icons/gi'
+import { FaTemperatureHigh } from 'react-icons/fa'
 
-const WeatherCard = ({ weather, temperature }) => {
+const WeatherCard = ({ weather, temperature, imgIcon }) => {
   const [isCelsius, setIsCelsius] = useState(true)
   const changeTemperatures = () => setIsCelsius(!isCelsius)
-  console.log(temperature)
   return (
     <article className='card'>
-      <h1>Weather App</h1>
-      <h2>{`${weather?.name}, ${weather?.sys.country}`}</h2>
-      <section>
-        <img src={weather ? `https://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png` : ''} alt='' />
-        <h3>Temperature</h3>
+      <section className='weather__title'>
+        <h1 className='weather__app'>Weather App</h1>
+        <h2 className='weather__app'>{`${weather?.name}, ${weather?.sys.country}`}</h2>
       </section>
-      <section>
-        <h3>"{weather?.weather[0].description}"</h3>
-        <ul>
-          <li><span>Wind Speed</span> {weather?.wind.speed}m/s</li>
-          <li><span>Clouds</span> {weather?.clouds.all}%</li>
-          <li><span>Pressure</span> {weather?.main.pressure}hPa</li>
+      <section className='img__weather'>
+        <img src={`http://openweathermap.org/img/wn/${imgIcon}@2x.png`} alt='' />
+      </section>
+      <section className='first__data'> {/* in 'first data' the climate data of the geolacized city is shown */}
+        <h3 className='description'>{weather?.weather[0].description}</h3>
+        <ul className='list__data'>
+          <li><span><WiNightAltCloudyWindy />  Wind Speed: <br /></span> {weather?.wind.speed}m/s</li>
+          <li><span><BsCloudsFill />  Clouds: <br /></span> {weather?.clouds.all}%</li>
+          <li><span><GiPressureCooker />  Pressure: <br /></span> {weather?.main.pressure}hPa</li>
         </ul>
       </section>
-      <h2>{ isCelsius ? `${temperature?.celsius} Cº` : `${temperature?.farenheit} Fº`}</h2>
-      <button onClick={changeTemperatures}>
-        {isCelsius ? 'Change to Fº' : 'Change to Cº'}
-      </button>
+      <section className='temperature__data'>
+        <h3 className='description'>Temperature <br /><br /> <FaTemperatureHigh /></h3>
+        <h2>{isCelsius ? `${temperature?.celsius} Cº` : `${temperature?.farenheit} Fº`}</h2>
+        <button onClick={changeTemperatures}>
+          {isCelsius ? 'Change to Fº' : 'Change to Cº'}
+        </button>
+      </section>
     </article>
   )
 }
