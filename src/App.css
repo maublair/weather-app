@@ -6,7 +6,7 @@
 }
 body {
   /*background-color: white !important;*/
-  background-image: url(./src/assets/fondo-5.jpeg);
+  background-image: url(./assets/fondo-5.jpeg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
