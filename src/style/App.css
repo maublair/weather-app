@@ -1,0 +1,67 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+body {
+  /*background-color: white !important;*/
+  background-image: url(../src/assets/fondo-5.jpeg) ;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.card {
+  min-width: 280px;
+  width: 600px;
+  padding: 3em;
+  display: flex;
+  background-color: rgba(232, 130, 130, 0.62);
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+
+.weather__title {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  line-height: 1em;
+}
+
+
+.first__data{
+  width: 50%;
+}
+
+.temperature__data{
+  width: 50%;
+}
+
+.description{
+  width: 50%;
+  text-align: center;
+  line-height: 1.5em;
+  padding-left: 2em;
+  font-size: 1.8em !important;
+  font-weight: 600 !important;
+  text-transform: capitalize;
+}
+.weather__app {
+  font-size: 2.5em !important;
+  font-weight: 600 !important;
+}
+
+.list__data li{
+  font-size: 1.5em !important;
+  line-height: 1.5em !important;
+  font-weight: 500;
+  text-align: left;
+  justify-content: left;
+  list-style: none;
+}
+
+.list__data span {
+  font-weight: 550 !important;
+}
