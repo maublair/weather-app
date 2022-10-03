@@ -68,3 +68,81 @@ body {
 .list__data span {
   font-weight: 550 !important;
 }
+
+
+/* Escritorio extra grande */
+@media only screen and (min-width: 1200px){
+
+}
+/* Escritorio grande */
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+
+}
+
+/* Escritorio pequeño / tablet */
+@media only screen and (min-width: 768px) and (max-width: 991px){
+
+}
+
+/* Tablets y phablets */
+@media only screen and (min-width: 601px) and (max-width: 767px){
+
+  .weather__title {
+    width: 100%;
+  }
+  
+  .img__weather{
+    width: 100%;
+    }
+  
+  .first__data{
+    width: 100%;
+  }
+  
+  .temperature__data{
+    width: 100%;
+  }
+  
+  .description{
+    width: 100%;
+  }
+  
+}
+
+/* Teléfonos */
+@media only screen and (max-width: 600px){
+
+  body{
+    background-image: url(./assets/fondo-5.jpeg);
+  background-repeat: repeat;
+  background-position: center center;
+  background-size:contain;
+  height: 100vh;
+  }
+  .card{
+    width: 290px;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+  }
+.weather__title {
+  width: 100%;
+}
+
+.img__weather{
+  width: 100%;
+  }
+
+.first__data{
+  width: 100%;
+}
+
+.temperature__data{
+  width: 100%;
+}
+
+.description{
+  width: 100%;
+}
+
+}
