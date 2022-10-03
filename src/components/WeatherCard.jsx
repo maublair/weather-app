@@ -14,7 +14,7 @@ const WeatherCard = ({ weather, temperature, imgIcon }) => {
         <h2 className='weather__app'>{`${weather?.name}, ${weather?.sys.country}`}</h2>
       </section>
       <section className='img__weather'>
-        <img src={`http://openweathermap.org/img/wn/${imgIcon}@2x.png`} alt='' />
+        <img src={`https://openweathermap.org/img/wn/${imgIcon}@2x.png`} alt='' />
       </section>
       <section className='first__data'> {/* in 'first data' the climate data of the geolacized city is shown */}
         <h3 className='description'>{weather?.weather[0].description}</h3>
